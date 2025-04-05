@@ -63,7 +63,11 @@ int binarySearch_count(int *arr, int len, int index ) {
 
 int countPairs3(int *arr, int len, int value) { 
   int count = 0;
-  for (int i = 0; i < len; i++) {
+  bool flag = 1;
+  for (int i = 0; flag; i++) {
+    if (arr[i] > value || i == len) {
+      flag = 0;
+    }
     int* temp_arr = &arr[i];
     int temp_len = len - (i + 1);
     int find = value - arr[i];
