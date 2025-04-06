@@ -2,7 +2,7 @@
 int countPairs1(int *arr, int len, int value) { 
   int count = 0;
   for (int i = 0; i < len; i++) {
-    for (int j = i; j < len; j++) {
+    for (int j = i + 1; j < len; j++) {
       if (arr[i] + arr[j] == value) {
         count++;
       }
@@ -31,7 +31,7 @@ int countPairs2(int *arr, int len, int value) {
 int binarySearch_index(int *arr, int len, int value) { 
   int lbound = 0;
   int rbound = len - 1;
-  while (rbound > lbound) {
+  while (rbound >= lbound) {
     int middle = lbound + (rbound - lbound) / 2;
     if (arr[middle] == value) {
       while (arr[middle - 1] == arr[middle]) {
